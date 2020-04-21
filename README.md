@@ -14,7 +14,7 @@
 
 > My Crud Service 'product.service.js'
 ```js
-import { CrudService, ApiService } from '@izzle/crud-io'
+import { CrudService } from '@izzle/crud-io'
 
 export default class extends CrudService {
     constructor () {
@@ -36,6 +36,8 @@ JwtService.setToken({ access_token: 'foobar' })
 import ProductService from './product.service.js'
 
 const service = new ProductService()
+
+// GET https://api.foo.bar/products with Authorization Header (Bearer foobar)
 let products = service.list()
 ```
 

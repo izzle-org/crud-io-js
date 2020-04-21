@@ -1,12 +1,16 @@
 {
   "name": "@izzle/crud-io",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
   "main": "build/crud-io.js",
   "keywords": [
     "Izzle",
     "Crud"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/Izzle/crud-io-js.git"
+  },
   "author": "Daniel Böhmer <daniel@izzle.org>",
   "license": "MIT",
   "scripts": {
