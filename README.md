@@ -25,13 +25,14 @@ export default class extends CrudService {
 
 > index.js
 ```js
-process.env.API_BASE_URL = 'https://api.foo.bar'
-
-import { JwtService } from '@izzle/crud-io'
+import { ApiService, JwtService } from '@izzle/crud-io'
 
 // Handle OAuth2
 ...
 JwtService.setToken({ access_token: 'foobar' })
+
+ApiService.init('https://api.foo.bar')
+ApiService.setAuthHeader('Bearer ' + JwtService.getToken().access_token)
 
 import ProductService from './product.service.js'
 
