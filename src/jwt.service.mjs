@@ -35,7 +35,7 @@ const JwtService = {
         let payload = this.getPayload()
         if (payload !== null) {
             if (seconds === undefined) {
-                seconds = 300
+                seconds = Math.min(300, payload.exp - payload.nbf) // If token expires in <= 300 seconds
             }
 
             return payload.exp - seconds <= Math.floor(Date.now() / 1000)

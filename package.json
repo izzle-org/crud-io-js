@@ -1,8 +1,8 @@
 {
   "name": "@izzle/crud-io",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
-  "main": "build/crud-io.js",
+  "main": "index.mjs",
   "keywords": [
     "Izzle",
     "Crud"
@@ -19,16 +19,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.7",
     "axios": "^0.19.2",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "babel-loader": "^8.1.0",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/plugin-transform-runtime": "^7.9.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }
