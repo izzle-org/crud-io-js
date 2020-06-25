@@ -11,34 +11,34 @@ const ApiService = {
         axios.defaults.headers.common['Authorization'] = header
     },
 
-    get (resource, config = {}) {
-        return axios.get(resource, config).catch(error => {
+    async get (resource, params = {}, config = {}) {
+        return axios.get(resource, { ...config, ...{ params: params } }).catch(error => {
             throw new Error('ApiService error: ' + error.message)
         })
     },
 
-    post (resource, data = {}, config = null) {
+    async post (resource, data = {}, config = null) {
         return axios.post(resource, data, config).catch(error => {
             throw new Error('ApiService error: ' + error.message)
         })
     },
 
-    create (resource, data = {}, config = null) {
+    async create (resource, data = {}, config = null) {
         return this.post(resource, data, config)
     },
 
-    patch (resource, data = {}, config = null) {
+    async patch (resource, data = {}, config = null) {
         return axios.patch(resource, data, config).catch(error => {
             throw new Error('ApiService error: ' + error.message)
         })
     },
 
-    update (resource, data, config) {
+    async update (resource, data, config) {
         return this.patch(resource, data, config)
     },
 
-    remove (resource, config = {}) {
-        return axios.delete(resource, config).catch(error => {
+    async remove (resource, params = {}, config = {}) {
+        return axios.delete(resource, { ...config, ...{ params: params } }).catch(error => {
             throw new Error('ApiService error: ' + error.message)
         })
     }

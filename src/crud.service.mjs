@@ -10,24 +10,34 @@ export default class CrudService {
     }
 
     async list (params, subUrl, config = {}) {
-        const url = subUrl !== undefined ? this.endpoint + subUrl : this.endpoint
+        params = typeof params === 'object' && params !== null ? params : {}
+        let url = subUrl !== undefined ? this.endpoint + subUrl : this.endpoint
 
-        return ApiService.get(url, {
-            ...config,
-            ...{ params: params }
-        })
+        return ApiService.get(url, params, config)
     }
 
     async save (payload, config = {}) {
-        return payload.id !== undefined && payload.id > 0
+        if (typeof payload !== 'object' ||
+            payload === null ||
+            payload.id === undefined) {
+
+            throw new Error('CrudService error: Param payload must be type object with id and data property')
+        }
+
+        return payload.id > 0
             ? ApiService.update(this.endpoint + '/' + payload.id, payload, config)
             : ApiService.create(this.endpoint, payload, config)
     }
 
     async remove (payload, config = {}) {
-        return ApiService.remove(this.endpoint + '/' + payload.id, {
-            ...config,
-            ...{ params: payload.data }
-        })
+        if (typeof payload !== 'object' ||
+            payload === null ||
+            payload.id === undefined ||
+            payload.data === undefined) {
+
+            throw new Error('CrudService error: Param payload must be type object with id and data property')
+        }
+
+        return ApiService.remove(this.endpoint + '/' + payload.id, payload.data, config)
     }
 }
