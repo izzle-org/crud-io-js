@@ -11,6 +11,11 @@ ApiService.get('posts/1')
         console.log(response.data)
     })
 
+ApiService.get('posts', { userId: 1 })
+    .then(response => {
+        console.log(response.data)
+    })
+
 ApiService.create('posts', {
     title: 'foo',
     body: 'bar',
