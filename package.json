@@ -1,6 +1,6 @@
 {
   "name": "@izzle-org/crud-io",
-  "version": "0.3.1",
+  "version": "0.3.4",
   "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
   "main": "index.mjs",
   "keywords": [
@@ -25,6 +25,5 @@
   "devDependencies": {
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
-  },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  }
 }
