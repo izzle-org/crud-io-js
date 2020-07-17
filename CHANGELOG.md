@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.3.1 (2020-07-17)
+
+    * change [Git] Changed scope to izzle-org
+
 * 0.3.0 (2020-07-17)
 
     * change [Git] Pushed from gitlab to github and changed scope to sicbb
