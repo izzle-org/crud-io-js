@@ -1,6 +1,6 @@
 {
   "name": "@sicbb/crud-io",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
   "main": "index.mjs",
   "keywords": [
