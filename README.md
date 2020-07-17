@@ -7,14 +7,14 @@
 > Using npm:
  ```shell
  $ npm i -g npm
- $ npm i @sicbb/crud-io
+ $ npm i @izzle-org/crud-io
  ```
 
 ## Usage
 
 > My Crud Service 'product.service.js'
 ```js
-import { CrudService } from '@sicbb/crud-io'
+import { CrudService } from '@izzle-org/crud-io'
 
 export default class extends CrudService {
     constructor () {
@@ -25,7 +25,7 @@ export default class extends CrudService {
 
 > index.js
 ```js
-import { ApiService, JwtService } from '@sicbb/crud-io'
+import { ApiService, JwtService } from '@izzle-org/crud-io'
 
 // Handle OAuth2
 ...
