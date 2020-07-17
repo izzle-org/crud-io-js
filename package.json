@@ -1,5 +1,5 @@
 {
-  "name": "@sicbb/crud-io",
+  "name": "@izzle-org/crud-io",
   "version": "0.3.0",
   "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
   "main": "index.mjs",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:sicbb/crud-io-js.git"
+    "url": "git+https://git@github.com:izzle-org/crud-io-js.git"
   },
   "author": "Daniel Böhmer <daniel@izzle.org>",
   "license": "MIT",
