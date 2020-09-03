@@ -19,14 +19,15 @@ export default class CrudService {
     async save (payload, config = {}) {
         if (typeof payload !== 'object' ||
             payload === null ||
-            payload.id === undefined) {
+            payload.id === undefined ||
+            payload.data === undefined) {
 
             throw new Error('CrudService error: Param payload must be type object with id and data property')
         }
 
         return payload.id > 0
-            ? ApiService.update(this.endpoint + '/' + payload.id, payload, config)
-            : ApiService.create(this.endpoint, payload, config)
+            ? ApiService.update(this.endpoint + '/' + payload.id, payload.data, config)
+            : ApiService.create(this.endpoint, payload.data, config)
     }
 
     async remove (payload, config = {}) {
