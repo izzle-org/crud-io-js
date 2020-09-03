@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.3.5 (2020-09-03)
+
+    * bug [CrudService] Fixed save method
+
 * 0.3.4 (2020-07-17)
 
     * change [Git] Changed scope to izzle-org
