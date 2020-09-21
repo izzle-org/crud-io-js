@@ -1,6 +1,8 @@
 import axios from 'axios'
 
 const ApiService = {
+    errorHandler: null,
+
     init (baseUrl) {
         axios.defaults.headers.common['Accept'] = 'application/json'
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
@@ -11,15 +13,27 @@ const ApiService = {
         axios.defaults.headers.common['Authorization'] = header
     },
 
+    onErrorHandler (callback) {
+        if (typeof callback !== 'function') {
+            return
+        }
+
+        ApiService.errorHandler = callback
+    },
+
     async get (resource, params = {}, config = {}) {
         return axios.get(resource, { ...config, ...{ params: params } }).catch(error => {
-            throw new Error('ApiService error: ' + error.message)
+            ApiService.errorHandler(error)
+
+            return error
         })
     },
 
     async post (resource, data = {}, config = null) {
         return axios.post(resource, data, config).catch(error => {
-            throw new Error('ApiService error: ' + error.message)
+            ApiService.errorHandler(error)
+
+            return error
         })
     },
 
@@ -29,7 +43,9 @@ const ApiService = {
 
     async patch (resource, data = {}, config = null) {
         return axios.patch(resource, data, config).catch(error => {
-            throw new Error('ApiService error: ' + error.message)
+            ApiService.errorHandler(error)
+
+            return error
         })
     },
 
@@ -39,7 +55,9 @@ const ApiService = {
 
     async remove (resource, params = {}, config = {}) {
         return axios.delete(resource, { ...config, ...{ params: params } }).catch(error => {
-            throw new Error('ApiService error: ' + error.message)
+            ApiService.errorHandler(error)
+
+            return error
         })
     }
 }
