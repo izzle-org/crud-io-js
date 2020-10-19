@@ -13,6 +13,14 @@ const ApiService = {
         axios.defaults.headers.common['Authorization'] = header
     },
 
+    setHeaders (headers) {
+        axios.defaults.headers.common = { ...headers, ...axios.defaults.headers.common }
+    },
+
+    axios () {
+        return axios
+    },
+
     onErrorHandler (callback) {
         if (typeof callback !== 'function') {
             return

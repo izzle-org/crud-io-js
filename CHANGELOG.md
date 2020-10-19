@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.3.6 (2020-10-19)
+
+    * feature [ApiService] Added new method setHeaders and axios
+
 * 0.3.5 (2020-09-03)
 
     * bug [CrudService] Fixed save method
