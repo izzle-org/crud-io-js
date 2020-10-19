@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.3.7 (2020-10-19)
+    
+    * fix [Package] Fixed Version
+
 * 0.3.6 (2020-10-19)
 
     * feature [ApiService] Added new method setHeaders and axios
