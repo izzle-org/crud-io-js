@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.3.8 (2020-10-28)
+
+    * fix [ApiService] Fixed bug when no error handler is defined
+
 * 0.3.7 (2020-10-19)
     
     * fix [Package] Fixed Version
