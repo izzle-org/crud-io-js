@@ -30,7 +30,7 @@ const ApiService = {
     },
 
     onError (error) {
-        if (ApiService.errorHandler === 'function') {
+        if (ApiService.errorHandler && typeof ApiService.errorHandler === 'function') {
             ApiService.errorHandler(error)
         }
 
