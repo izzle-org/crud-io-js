@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.3.10 (2020-11-09)
+
+    * bug [ApiService] Fixed minor Promise reject bug
+
 * 0.3.9 (2020-10-28)
 
     * fix [ApiService] Minor error handler bugfix
