@@ -39,13 +39,13 @@ const ApiService = {
 
     async get (resource, params = {}, config = {}) {
         return axios.get(resource, { ...config, ...{ params: params } }).catch(error => {
-            return ApiService.onError(error)
+            return Promise.reject(ApiService.onError(error))
         })
     },
 
     async post (resource, data = {}, config = null) {
         return axios.post(resource, data, config).catch(error => {
-            return ApiService.onError(error)
+            return Promise.reject(ApiService.onError(error))
         })
     },
 
@@ -55,7 +55,7 @@ const ApiService = {
 
     async patch (resource, data = {}, config = null) {
         return axios.patch(resource, data, config).catch(error => {
-            return ApiService.onError(error)
+            return Promise.reject(ApiService.onError(error))
         })
     },
 
@@ -65,7 +65,7 @@ const ApiService = {
 
     async remove (resource, params = {}, config = {}) {
         return axios.delete(resource, { ...config, ...{ params: params } }).catch(error => {
-            return ApiService.onError(error)
+            return Promise.reject(ApiService.onError(error))
         })
     }
 }
