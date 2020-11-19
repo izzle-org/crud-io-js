@@ -47,21 +47,22 @@ const JwtService = {
     verify (certificate, token) {
         let data = token !== undefined ? token : this.getToken()
         if (data === null) {
-            return false
+            throw new Error('Token verify: Token is null')
         }
 
         if (certificate === undefined || certificate == null) {
-            return false
+            throw new Error('Token verify: Certificate is undefined or null')
         }
 
         try {
-            jwt.verify(data.access_token, certificate)
+            // NBF (not before) 5 minutes clock tolerance included
+            jwt.verify(data.access_token, certificate, { clockTolerance: 300 })
 
             return true
         } catch (e) {
             this.destroyToken()
 
-            return false
+            throw e
         }
     }
 }
