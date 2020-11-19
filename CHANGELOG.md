@@ -3,6 +3,11 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.4.0 (2020-11-19)
+
+    * feature [JwtService] Added exceptions to verify method
+    * feature [JwtService] Added a 5 minutes clock tolerance to verification
+
 * 0.3.10 (2020-11-09)
 
     * bug [ApiService] Fixed minor Promise reject bug
