@@ -6,6 +6,7 @@ const ApiService = {
     init (baseUrl) {
         axios.defaults.headers.common['Accept'] = 'application/json'
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+        axios.defaults.withCredentials = true
         axios.defaults.baseURL = baseUrl
     },
 
