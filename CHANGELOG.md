@@ -3,6 +3,11 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.4.1 (2021-02-02)
+
+    * change [ApiService] Added withCredentials config value to true
+    * change [Package] Push to new Axios Version
+
 * 0.4.0 (2020-11-19)
 
     * feature [JwtService] Added exceptions to verify method

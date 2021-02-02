@@ -1,29 +1,29 @@
 {
-  "name": "@izzle-org/crud-io",
-  "version": "0.4.0",
-  "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
-  "main": "index.mjs",
-  "keywords": [
-    "Izzle",
-    "Crud"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://git@github.com:izzle-org/crud-io-js.git"
-  },
-  "author": "Daniel Böhmer <daniel@izzle.org>",
-  "license": "MIT",
-  "scripts": {
-    "start": "webpack --watch",
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "jsonwebtoken": "^8.5.1"
-  },
-  "devDependencies": {
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
-  }
+    "name": "@izzle-org/crud-io",
+    "version": "0.4.1",
+    "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
+    "main": "index.mjs",
+    "keywords": [
+        "Izzle",
+        "Crud"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://git@github.com:izzle-org/crud-io-js.git"
+    },
+    "author": "Daniel Böhmer <daniel@izzle.org>",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack --watch",
+        "build": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "jsonwebtoken": "^8.5.1"
+    },
+    "devDependencies": {
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11"
+    }
 }
