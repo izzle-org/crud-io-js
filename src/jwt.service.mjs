@@ -1,18 +1,58 @@
 import jwt from 'jsonwebtoken'
+import CryptoJS from 'crypto-js'
 
 const JWT_KEY = 'auth.jwt'
+const STORAGE_TYPE_LOCAL = 'local_storage'
+const STORAGE_TYPE_SESSION = 'session_storage'
 
 const JwtService = {
+    encrypt: false,
+
+    secretKey: null,
+
+    storage: STORAGE_TYPE_LOCAL,
+
     getToken () {
-        return JSON.parse(localStorage.getItem(JWT_KEY))
+        let data = this.getStorage().getItem(JWT_KEY)
+        if (this.encrypt && this.checkEncryptKey()) {
+            let bytes = CryptoJS.AES.decrypt(data, this.secretKey)
+
+            return JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+        }
+
+        return JSON.parse(data)
     },
 
     setToken (token) {
-        localStorage.setItem(JWT_KEY, JSON.stringify(token))
+        let data = JSON.stringify(token)
+        if (this.encrypt && this.checkEncryptKey()) {
+            data = CryptoJS.AES.encrypt(data, this.secretKey).toString()
+        }
+
+        this.getStorage().setItem(JWT_KEY, data)
     },
 
     destroyToken () {
-        localStorage.removeItem(JWT_KEY)
+        this.getStorage().removeItem(JWT_KEY)
+    },
+
+    getStorage () {
+        switch (this.storage) {
+            case STORAGE_TYPE_LOCAL:
+                return localStorage
+            case STORAGE_TYPE_SESSION:
+                return sessionStorage
+            default:
+                return localStorage
+        }
+    },
+
+    checkEncryptKey () {
+        if (this.secretKey === null || this.secretKey.length === 0) {
+            throw new Error('Encrypt key is null or empty')
+        }
+
+        return true
     },
 
     getPayload () {
