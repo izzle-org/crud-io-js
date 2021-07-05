@@ -104,6 +104,14 @@ const JwtService = {
 
             throw e
         }
+    },
+
+    useLocalStorage () {
+        this.storage = STORAGE_TYPE_LOCAL
+    },
+
+    useSessionStorage () {
+        this.storage = STORAGE_TYPE_SESSION
     }
 }
 

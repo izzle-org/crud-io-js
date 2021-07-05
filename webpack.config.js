@@ -8,5 +8,5 @@ module.exports = {
         filename: 'crud-io.js',
         libraryTarget: 'commonjs2'
     },
-    externals: ['axios', 'jsonwebtoken']
+    externals: ['axios', 'jsonwebtoken', 'crypto-js']
 };
