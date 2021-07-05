@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.4.3 (2021-07-05)
+
+    * fix [JwtService] Minor setter fix
+
 * 0.4.2 (2021-07-05)
 
     * feature [JwtService] JWT can now be encrypted
