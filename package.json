@@ -1,6 +1,6 @@
 {
     "name": "@izzle-org/crud-io",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
     "main": "index.mjs",
     "keywords": [
