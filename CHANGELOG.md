@@ -3,6 +3,11 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.4.2 (2021-07-05)
+
+    * feature [JwtService] JWT can now be encrypted
+    * feature [JwtService] JWT can now be saved to local or session Storage
+
 * 0.4.1 (2021-02-02)
 
     * change [ApiService] Added withCredentials config value to true
