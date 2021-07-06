@@ -14,6 +14,10 @@ const JwtService = {
 
     getToken () {
         let data = this.getStorage().getItem(JWT_KEY)
+        if (data === undefined || data === null) {
+            return null
+        }
+
         if (this.encrypt && this.checkEncryptKey()) {
             let bytes = CryptoJS.AES.decrypt(data, this.secretKey)
 
