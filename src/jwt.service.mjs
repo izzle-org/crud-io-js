@@ -24,6 +24,10 @@ const JwtService = {
     },
 
     setToken (token) {
+        if (token === undefined || token === null) {
+            return
+        }
+
         let data = JSON.stringify(token)
         if (this.encrypt && this.checkEncryptKey()) {
             data = CryptoJS.AES.encrypt(data, this.secretKey).toString()

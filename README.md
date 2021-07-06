@@ -29,8 +29,14 @@ import { ApiService, JwtService } from '@izzle-org/crud-io'
 
 // Handle OAuth2
 ...
+// JWT Config
+JwtService.encrypt = true
+JwtService.secretKey = 'foobar123'
+JwtService.useSessionStorage()
+
 JwtService.setToken({ access_token: 'foobar' })
 
+// API Config
 ApiService.init('https://api.foo.bar')
 ApiService.setAuthHeader('Bearer ' + JwtService.getToken().access_token)
 
