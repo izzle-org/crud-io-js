@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.4.5 (2021-07-06)
+
+  * fix [JwtService] Minor getToken fix
+
 * 0.4.4 (2021-07-06)
 
     * fix [JwtService] Minor setToken fix
