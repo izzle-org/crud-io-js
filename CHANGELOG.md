@@ -3,6 +3,10 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.4.6 (2021-07-07)
+
+  * feature [ApiService] Added additional init param to control the axios withCredentials option 
+
 * 0.4.5 (2021-07-06)
 
   * fix [JwtService] Minor getToken fix
