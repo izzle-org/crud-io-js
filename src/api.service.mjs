@@ -3,10 +3,10 @@ import axios from 'axios'
 const ApiService = {
     errorHandler: null,
 
-    init (baseUrl) {
+    init (baseUrl, withCredentials) {
         axios.defaults.headers.common['Accept'] = 'application/json'
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-        axios.defaults.withCredentials = true
+        axios.defaults.withCredentials = withCredentials !== undefined ? withCredentials : true
         axios.defaults.baseURL = baseUrl
     },
 
