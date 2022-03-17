@@ -4,8 +4,11 @@ import CryptoJS from 'crypto-js'
 const JWT_KEY = 'auth.jwt'
 const STORAGE_TYPE_LOCAL = 'local_storage'
 const STORAGE_TYPE_SESSION = 'session_storage'
+const STORAGE_TYPE_MEMORY = 'memory_storage'
 
 const JwtService = {
+    token: null,
+
     encrypt: false,
 
     secretKey: null,
@@ -50,6 +53,15 @@ const JwtService = {
                 return localStorage
             case STORAGE_TYPE_SESSION:
                 return sessionStorage
+            case STORAGE_TYPE_MEMORY:
+                return {
+                    getItem(key) {
+                        return this.token
+                    },
+                    setItem(key, data) {
+                        this.token = data
+                    }
+                }
             default:
                 return localStorage
         }
@@ -120,6 +132,10 @@ const JwtService = {
 
     useSessionStorage () {
         this.storage = STORAGE_TYPE_SESSION
+    },
+
+    useMemoryStorage () {
+        this.storage = STORAGE_TYPE_MEMORY
     }
 }
 
