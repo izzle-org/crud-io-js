@@ -15,7 +15,7 @@ const ApiService = {
     },
 
     setHeaders (headers) {
-        axios.defaults.headers.common = { ...headers, ...axios.defaults.headers.common }
+        axios.defaults.headers.common = { ...axios.defaults.headers.common, ...headers }
     },
 
     axios () {

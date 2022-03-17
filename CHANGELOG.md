@@ -3,6 +3,11 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes)
 
+* 0.5.0 (2022-03-17)
+
+  * change [ApiService] Changed setHeaders object merging
+  * feature [JwtService] Added Memory Storage
+
 * 0.4.6 (2021-07-07)
 
   * feature [ApiService] Added additional init param to control the axios withCredentials option 
