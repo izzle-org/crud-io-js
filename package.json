@@ -1,6 +1,6 @@
 {
     "name": "@izzle-org/crud-io",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "description": "Simple Crud Service Lib, based on OAuth2 Authorization and Axios Calls",
     "main": "index.mjs",
     "keywords": [
@@ -19,12 +19,12 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
-        "axios": "^0.21.1",
-        "crypto-js": "^4.0.0",
-        "jsonwebtoken": "^8.5.1"
+        "axios": "^1.4.0",
+        "crypto-js": "^4.1.1",
+        "jsonwebtoken": "^9.0.0"
     },
     "devDependencies": {
-        "webpack": "^4.42.1",
+        "webpack": "^4.44.2",
         "webpack-cli": "^3.3.11"
     }
 }
